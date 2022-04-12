@@ -125,7 +125,7 @@ const domRowElement = document.getElementById('domelement');
 function postPrinter(listPosts, domElement) {
     listPosts.forEach(post => {
         domElement.innerHTML += `
-        <div id="${post.id}" class="col mb_1">
+        <div class="col mb_1">
         <div class="post">
             <div class="author_info">
                 <img src="${post.authorImg}" alt="">
@@ -148,7 +148,7 @@ function postPrinter(listPosts, domElement) {
             <!-- /.post_img -->
             <div class="likes row">
                 <div class="col_50">
-                    <button class="btn_like">
+                    <button id="${post.id}" class="btn_like">
                         <i class="fa-solid fa-thumbs-up"></i>
                         <span>Mi Piace</span>
                     </button>
@@ -180,10 +180,15 @@ postPrinter(posts, domRowElement);
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 // collego il btn_like
-const btnLikeElement = document.querySelector('.btn_like');
+const btnLikeElements = document.querySelectorAll('.btn_like');
 
-//aggiungo evento al click
-btnLikeElement.addEventListener('click', function() {
-    btnLikeElement.classList.toggle('text_blue');
-    
-});
+//aggiungo evento al click per ogni btn con un ciclo
+
+for(let i = 0; i < btnLikeElements.length; i++){
+    btnLikeElements[i].addEventListener('click', function() {
+        btnLikeElements[i].classList.toggle('text_blue');
+        console.log(this.id);
+    });
+}
+
+
