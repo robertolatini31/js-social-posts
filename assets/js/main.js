@@ -22,7 +22,7 @@ const posts = [
         authorImg: 'https://picsum.photos/200',
         date: '01-09-2019',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
-        postImg: 'https://picsum.photos/200/300',
+        postImg: 'https://picsum.photos/480/250',
         numberLikes: 30
     },
     {
@@ -31,7 +31,7 @@ const posts = [
         authorImg: 'https://picsum.photos/200',
         date: '06-23-2019',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
-        postImg: 'https://picsum.photos/200/300',
+        postImg: 'https://picsum.photos/480/250',
         numberLikes: 25
     },
     {
@@ -49,7 +49,7 @@ const posts = [
         authorImg: 'https://picsum.photos/200',
         date: '08-15-2020',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
-        postImg: 'https://picsum.photos/200/300',
+        postImg: 'https://picsum.photos/480/250',
         numberLikes: 81
     },
     {
@@ -58,7 +58,7 @@ const posts = [
         authorImg: 'https://picsum.photos/200',
         date: '12-24-2020',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
-        postImg: 'https://picsum.photos/200/300',
+        postImg: 'https://picsum.photos/480/250',
         numberLikes: 30
     },
     {
@@ -76,7 +76,7 @@ const posts = [
         authorImg: 'https://picsum.photos/200',
         date: '07-31-2021',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
-        postImg: 'https://picsum.photos/200/300',
+        postImg: 'https://picsum.photos/480/250',
         numberLikes: 33
     },
     {
@@ -94,7 +94,7 @@ const posts = [
         authorImg: 'https://picsum.photos/200',
         date: '10-03-2022',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
-        postImg: 'https://picsum.photos/200/300',
+        postImg: 'https://picsum.photos/480/250',
         numberLikes: 54
     },
     {

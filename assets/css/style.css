@@ -71,6 +71,10 @@ main {
     font-size: 12px;
 }
 
+.author_text {
+    font-size: 14.5px;
+}
+
 .post_img {
     text-align: center;
     margin: 0.8rem 0;
@@ -86,11 +90,13 @@ main {
     padding: 0.5rem;
     border: none;
     background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
 }
 
 .likes p {
     padding: 0.5rem;
-    font-size: 13.33px;
+    font-size: 13px;
 }
 
 .likes span {
