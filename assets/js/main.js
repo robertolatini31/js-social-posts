@@ -143,7 +143,7 @@ function postPrinter(listPosts, domElement) {
                 <!-- /.author Img  -->
                 <div class="author_name">
                     <h4>${post.authorName}</h4>
-                    <p>${post.date}</p>
+                    <p>${dateFormatter(post.date)}</p>
                 </div>
                 <!-- /.author_name -->
     
@@ -216,4 +216,26 @@ for(let i = 0; i < btnLikeElements.length; i++){ // faccio un ciclo che scorre t
     });
 }
 
+
+// BONUS
+// Formattare le date in formato italiano (gg/mm/aaaa)
+
+function dateFormatter(dateString) {
+    const newDate = [];
+    const dateArray = dateString.split('');
+    newDate.push(dateArray[3]);
+    newDate.push(dateArray[4]);
+    newDate.push('/');
+    newDate.push(dateArray[0]);
+    newDate.push(dateArray[1]);
+    newDate.push('/');
+    for(let i = 6; i < 10; i++) {
+        newDate.push(dateArray[i]);
+    }
+    return newDate.join('');
+}
+
+
+// Gestire l'assenza dell'immagine profilo con un elemento di fallback che contiene le iniziali dell'utente (es. Luca Formicola > LF).
+// Al click su un pulsante "Mi Piace" di un post, se abbiamo già cliccato dobbiamo decrementare il contatore e cambiare il colore del bottone.
 
