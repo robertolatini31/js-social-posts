@@ -212,10 +212,7 @@ for(let i = 0; i < btnLikeElements.length; i++){ // faccio un ciclo che scorre t
                 // devo stampare il valore nuovo nella dom
                 counterLikesElements[i].innerHTML = post.numberLikes;
             }
-
-        });
-        
-         
+        });        
     });
 }
 
