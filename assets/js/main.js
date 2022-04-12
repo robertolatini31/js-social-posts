@@ -18,6 +18,7 @@
 const posts = [
     {
         id: 1,
+        liked: false,
         authorName: 'Ugo',
         authorImg: 'https://picsum.photos/200',
         date: '01-09-2019',
@@ -27,6 +28,7 @@ const posts = [
     },
     {
         id: 2,
+        liked: false,
         authorName: 'Rosa',
         authorImg: 'https://picsum.photos/200',
         date: '06-23-2019',
@@ -36,6 +38,7 @@ const posts = [
     },
     {
         id: 3,
+        liked: false,
         authorName: 'Mario',
         authorImg: 'https://picsum.photos/200',
         date: '11-13-2019',
@@ -45,6 +48,7 @@ const posts = [
     },
     {
         id: 4,
+        liked: false,
         authorName: 'Sara',
         authorImg: 'https://picsum.photos/200',
         date: '08-15-2020',
@@ -54,6 +58,7 @@ const posts = [
     },
     {
         id: 5,
+        liked: false,
         authorName: 'Rita',
         authorImg: 'https://picsum.photos/200',
         date: '12-24-2020',
@@ -63,6 +68,7 @@ const posts = [
     },
     {
         id: 6,
+        liked: false,
         authorName: 'Roberto',
         authorImg: 'https://picsum.photos/200',
         date: '07-30-2021',
@@ -72,6 +78,7 @@ const posts = [
     },
     {
         id: 7,
+        liked: false,
         authorName: 'Valeria',
         authorImg: 'https://picsum.photos/200',
         date: '07-31-2021',
@@ -81,6 +88,7 @@ const posts = [
     },
     {
         id: 8,
+        liked: false,
         authorName: 'Gianni',
         authorImg: 'https://picsum.photos/200',
         date: '01-09-2022',
@@ -90,6 +98,7 @@ const posts = [
     },
     {
         id: 9,
+        liked: false,
         authorName: 'Sandro',
         authorImg: 'https://picsum.photos/200',
         date: '10-03-2022',
@@ -99,6 +108,7 @@ const posts = [
     },
     {
         id: 10,
+        liked: false,
         authorName: 'Marisa',
         authorImg: 'https://picsum.photos/200',
         date: '12-25-2022',
@@ -123,6 +133,7 @@ const domRowElement = document.getElementById('domelement');
  * @param {*} domElement 
  */
 function postPrinter(listPosts, domElement) {
+    domElement.innerHTML = '';
     listPosts.forEach(post => {
         domElement.innerHTML += `
         <div class="col mb_1">
@@ -155,7 +166,7 @@ function postPrinter(listPosts, domElement) {
                 </div>
                 <!-- /.col -->
                 <div class="col_50">
-                    <p>Piace a <span>${post.numberLikes}</span> persone</p>
+                    <p>Piace a <span class="counter_likes">${post.numberLikes}</span> persone</p>
                 </div>
                 <!-- /.col -->
     
@@ -181,13 +192,30 @@ postPrinter(posts, domRowElement);
 
 // collego il btn_like
 const btnLikeElements = document.querySelectorAll('.btn_like');
-
+// collego i likes
+const counterLikesElements = document.querySelectorAll('.counter_likes');
 //aggiungo evento al click per ogni btn con un ciclo
 
-for(let i = 0; i < btnLikeElements.length; i++){
-    btnLikeElements[i].addEventListener('click', function() {
-        btnLikeElements[i].classList.toggle('text_blue');
-        console.log(this.id);
+for(let i = 0; i < btnLikeElements.length; i++){ // faccio un ciclo che scorre tutti i btn like
+    btnLikeElements[i].addEventListener('click', function() { // aggiungo eventlistener ai btn
+        btnLikeElements[i].classList.toggle('text_blue'); // aggiungo il colore blue al testo del btn
+        // console.log(this.id); // controllo se id è connesso al btn
+        posts.forEach(post => { // scorro la lista posts
+            if(this.id == post.id && post.liked == false) { // se id btn e del post coincidono
+                post.liked = true; // metto su vero la chiave liked
+                ++post.numberLikes; // e incremento il valore dei likes
+                // devo stampare il valore nuovo nella dom
+                counterLikesElements[i].innerHTML = post.numberLikes;
+            } else if (this.id == post.id && post.liked != false) {
+                post.liked = false; // metto su vero la chiave liked
+                --post.numberLikes; // e incremento il valore dei likes
+                // devo stampare il valore nuovo nella dom
+                counterLikesElements[i].innerHTML = post.numberLikes;
+            }
+
+        });
+        
+         
     });
 }
 
