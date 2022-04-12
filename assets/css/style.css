@@ -1,6 +1,99 @@
+:root {
+    --body-bg_color: #023047;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--body-bg_color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* *** Utility ***  */
+
+.direction_column {
+    flex-direction: column;
+}
+
+.col_50 {
+    width: 50%;
+}
+
+/* *** Common ***  */
+
+img {
+    max-width: 100%;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+}
+
+/* #region ***MAIN***  */
+
+main {
+    padding: 2rem;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.post {
+    background-color: white;
+    padding: 0.75rem;
+}
+
+.author_info>img {
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.author_info {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.author_name p {
+    font-size: 12px;
+}
+
+.post_img {
+    text-align: center;
+    margin: 0.8rem 0;
+}
+
+.likes div{
+    display: flex;
+    justify-content: center;
+}
+
+.likes button {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+.likes p {
+    padding: 0.5rem;
+    font-size: 13.33px;
+}
+
+.likes span {
+    font-weight: bold;
+}
+/* #endregion ***MAIN***  */

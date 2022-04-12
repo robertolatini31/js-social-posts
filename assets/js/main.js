@@ -107,3 +107,7 @@ const posts = [
         numberLikes: 77
     }
 ];
+
+// Milestone 2
+// Prendendo come riferimento il layout di esempio presente nell'html, 
+// stampiamo i post del nostro feed.
