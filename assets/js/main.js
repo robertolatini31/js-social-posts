@@ -185,4 +185,5 @@ const btnLikeElement = document.querySelector('.btn_like');
 //aggiungo evento al click
 btnLikeElement.addEventListener('click', function() {
     btnLikeElement.classList.toggle('text_blue');
+    
 });
