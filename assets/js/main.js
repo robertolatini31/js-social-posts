@@ -20,7 +20,8 @@ const posts = [
         id: 1,
         liked: false,
         authorName: 'Ugo',
-        authorImg: 'https://picsum.photos/200',
+        authorSurname: 'Rossi',
+        authorImg: '',
         date: '01-09-2019',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
         postImg: 'https://picsum.photos/480/250',
@@ -30,6 +31,7 @@ const posts = [
         id: 2,
         liked: false,
         authorName: 'Rosa',
+        authorSurname: 'Gildi',
         authorImg: 'https://picsum.photos/200',
         date: '06-23-2019',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -40,6 +42,7 @@ const posts = [
         id: 3,
         liked: false,
         authorName: 'Mario',
+        authorSurname: 'Brini',
         authorImg: 'https://picsum.photos/200',
         date: '11-13-2019',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -50,6 +53,7 @@ const posts = [
         id: 4,
         liked: false,
         authorName: 'Sara',
+        authorSurname: 'Sorrisi',
         authorImg: 'https://picsum.photos/200',
         date: '08-15-2020',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -60,7 +64,8 @@ const posts = [
         id: 5,
         liked: false,
         authorName: 'Rita',
-        authorImg: 'https://picsum.photos/200',
+        authorSurname: 'Massimi',
+        authorImg: '',
         date: '12-24-2020',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
         postImg: 'https://picsum.photos/480/250',
@@ -70,6 +75,7 @@ const posts = [
         id: 6,
         liked: false,
         authorName: 'Roberto',
+        authorSurname: 'Latini',
         authorImg: 'https://picsum.photos/200',
         date: '07-30-2021',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -80,6 +86,7 @@ const posts = [
         id: 7,
         liked: false,
         authorName: 'Valeria',
+        authorSurname: 'Sozzi',
         authorImg: 'https://picsum.photos/200',
         date: '07-31-2021',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -90,6 +97,7 @@ const posts = [
         id: 8,
         liked: false,
         authorName: 'Gianni',
+        authorSurname: 'Marini',
         authorImg: 'https://picsum.photos/200',
         date: '01-09-2022',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -100,7 +108,8 @@ const posts = [
         id: 9,
         liked: false,
         authorName: 'Sandro',
-        authorImg: 'https://picsum.photos/200',
+        authorSurname: 'Lupo',
+        authorImg: '',
         date: '10-03-2022',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
         postImg: 'https://picsum.photos/480/250',
@@ -110,6 +119,7 @@ const posts = [
         id: 10,
         liked: false,
         authorName: 'Marisa',
+        authorSurname: 'Rame',
         authorImg: 'https://picsum.photos/200',
         date: '12-25-2022',
         postText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero neque laboriosam culpa ipsum animi illum impedit consequatur quaerat deleniti.',
@@ -139,10 +149,10 @@ function postPrinter(listPosts, domElement) {
         <div class="col mb_1">
         <div class="post">
             <div class="author_info">
-                <img src="${post.authorImg}" alt="">
+                <img src="${post.authorImg}" alt="${post.authorName[0]} ${post.authorSurname[0]}">
                 <!-- /.author Img  -->
                 <div class="author_name">
-                    <h4>${post.authorName}</h4>
+                    <h4>${post.authorName} ${post.authorSurname}</h4>
                     <p>${dateFormatter(post.date)}</p>
                 </div>
                 <!-- /.author_name -->
@@ -236,6 +246,8 @@ function dateFormatter(dateString) {
 }
 
 
-// Gestire l'assenza dell'immagine profilo con un elemento di fallback che contiene le iniziali dell'utente (es. Luca Formicola > LF).
+// Gestire l'assenza dell'immagine profilo con un elemento di fallback 
+// che contiene le iniziali dell'utente (es. Luca Formicola > LF).
+
 // Al click su un pulsante "Mi Piace" di un post, se abbiamo già cliccato dobbiamo decrementare il contatore e cambiare il colore del bottone.
 
