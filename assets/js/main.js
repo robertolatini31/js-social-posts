@@ -173,3 +173,16 @@ function postPrinter(listPosts, domElement) {
 
 // chiamo la funzione per stampare in dom
 postPrinter(posts, domRowElement);
+
+// Milestone 3
+// Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone
+// e incrementiamo il counter dei likes relativo.
+// Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+
+// collego il btn_like
+const btnLikeElement = document.querySelector('.btn_like');
+
+//aggiungo evento al click
+btnLikeElement.addEventListener('click', function() {
+    btnLikeElement.classList.toggle('text_blue');
+});

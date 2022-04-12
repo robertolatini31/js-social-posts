@@ -14,6 +14,10 @@ body {
 
 /* *** Utility ***  */
 
+.text_blue {
+    color: cornflowerblue;
+}
+
 .mb_1 {
     margin-bottom: 1rem;
 }
@@ -76,16 +80,17 @@ main {
 
 .author_text {
     font-size: 14.5px;
+    margin-bottom: 0.8rem;
 }
 
 .post_img {
     text-align: center;
-    margin: 0.8rem 0;
 }
 
 .likes div{
     display: flex;
     justify-content: center;
+    margin-top: 0.8rem;
 }
 
 .likes button {
