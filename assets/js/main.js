@@ -111,3 +111,65 @@ const posts = [
 // Milestone 2
 // Prendendo come riferimento il layout di esempio presente nell'html, 
 // stampiamo i post del nostro feed.
+
+// collego il punto della dom dove stampare
+const domRowElement = document.getElementById('domelement');
+// console.log(domRowElement);
+
+// creo una funzione che inserendo una lista stampa i posts
+/**
+ * 
+ * @param {array} listPosts 
+ * @param {*} domElement 
+ */
+function postPrinter(listPosts, domElement) {
+    listPosts.forEach(post => {
+        domElement.innerHTML += `
+        <div id="${post.id}" class="col mb_1">
+        <div class="post">
+            <div class="author_info">
+                <img src="${post.authorImg}" alt="">
+                <!-- /.author Img  -->
+                <div class="author_name">
+                    <h4>${post.authorName}</h4>
+                    <p>${post.date}</p>
+                </div>
+                <!-- /.author_name -->
+    
+            </div>
+            <!-- /.author info-->
+            <p class="author_text">
+                ${post.postText}
+            </p>
+            <!-- /.author_text -->
+            <div class="post_img">
+                <img src="${post.postImg}" alt="">
+            </div>
+            <!-- /.post_img -->
+            <div class="likes row">
+                <div class="col_50">
+                    <button class="btn_like">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <span>Mi Piace</span>
+                    </button>
+                </div>
+                <!-- /.col -->
+                <div class="col_50">
+                    <p>Piace a <span>${post.numberLikes}</span> persone</p>
+                </div>
+                <!-- /.col -->
+    
+            </div>
+            <!-- /.likes -->
+    
+        </div>
+        <!-- /.post -->
+    </div>
+    <!-- /.col --> 
+        `;
+    
+    });
+}
+
+// chiamo la funzione per stampare in dom
+postPrinter(posts, domRowElement);
